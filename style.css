@@ -1,0 +1,19 @@
+body{
+	background: #000000
+}
+
+p{
+	font-family: "Courier New";
+	color: white;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+p.big{
+	font-size: 60px;
+}
+
+h1{
+	font-family: "Courier New";
+	color: white;
+}
