@@ -32,21 +32,10 @@ function updateThings(){
   }
 
   // rounding metasecond length
-  mspMillisPart = metasecondsPassed - Math.floor(metasecondsPassed);
-
   mmpFactor = Math.floor(Math.log10(metasecondLength));
 
-  mspMillisPart = String(mspMillisPart).substring(1,mmpFactor + 5);
-  // because this is obviously the best way to round a decimal
-  // hey, future me, if you're looking at this code, don't post it on r/badcode
-  // if that's even still a thing by the time you see this
-
-  while (mspMillisPart.length < mmpFactor + 4)
-  {
-    mspMillisPart += "0";
-  }
-
-  metasecondsPassed = Math.floor(metasecondsPassed) + mspMillisPart; // yes, quite hacky code
+  metasecondsPassed = metasecondsPassed.toFixed(mmpFactor + 3);
+  // don't worry, past me, i've got a much better way to round a decimal
 
   document.getElementById("msvalue").innerHTML = metasecondLength + " seconds";
   document.getElementById("mspassed").innerHTML = metasecondsPassed + " metaseconds";
